@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common :: html_head}"></head>
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"></header>
+
+	</div>
+
+	<div class="container addMembers">
+
+		<h2>Add Completed</h2>
+		<div class="msg">
+			<p>New Information Added Below</p>
+		</div>
+
+		<div class="members-tbl">
+			<table>
+				<tr>
+					<th>Person name</th>
+					<td class=new-name th:text="${newName}"></td>
+				</tr>
+			</table>
+			<p class=changePage>
+				<a href="/member/add">Add Member More</a>
+			</p>
+		</div>
+
+	</div>
+
+	<div class="container-fluid">
+		<p>
+			<a th:href="@{/member/addMember}" class="movePage backPage">&lt;</a>
+		</p>
+		<footer th:replace="~{parts/common :: page_footer}"></footer>
+	</div>
+
+</body>
+</html>

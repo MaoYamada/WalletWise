@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{parts/common :: html_head}"></head>
+
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"></header>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<form action="" method="post" th:object="${payment}"
+					th:action="@{/payment/add}">
+
+					<div class="form-group">
+						<label for="NameId">Name</label>
+						<div class="name-select">
+							<select id="NameId" name="NameId" th:field="*{NameId}"
+								class="form-control">
+								<option th:each="member : ${members}" th:value="${member.id}"
+									th:text="${member.name}"></option>
+							</select>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="payment">Payment (￥)</label> <input type="text"
+							th:field="*{payment}" class="form-control">
+						<p class="error" th:errors="*{payment}"></p>
+					</div>
+
+					<div class="form-group">
+						<label for="memo">Memo (purpose)</label> <input type="text"
+							th:field="*{memo}" class="form-control">
+					</div>
+
+					<input class="btn btn-primary" type="submit" value="Add">
+
+				</form>
+				<p class="changePage">
+					<a th:href="@{/payment/payments}">Check registered data</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+
+		<p>
+			<a th:href="@{/payment/main}" class="movePage backPage">&lt;</a>
+		</p>
+		<p>
+			<a th:href="@{/payment/payments}" class="movePage goPage">&gt;</a>
+		</p>
+
+		<footer th:replace="~{parts/common :: page_footer}"></footer>
+	</div>
+
+</body>
+
+</html>

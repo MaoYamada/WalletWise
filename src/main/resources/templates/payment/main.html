@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common :: html_head}">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"> </header>
+	</div>
+
+	<div class="container">
+		<nav>
+			<ul class="actionList">
+				<li><a href="/member/add" class="btn"> <i
+						class="fas fa-regular fa-user"></i> <span>Member</span>
+				</a>
+					<div class=explainText>
+						<p>Register new members or edit</p>
+					</div></li>
+				<li><a href="/payment/add" class="btn"> <i
+						class="fas fa-solid fa-dollar-sign"></i> <span>Payment</span>
+				</a>
+					<div class=explainText>
+						<p>Register new paying in advance and delete</p>
+					</div></li>
+				<li><a href="/payment/result" class="btn"><i
+						class="fas fa-calculator"></i> <span>Result</span> </a>
+					<div class=explainText>
+						<p>Check each the result</p>
+					</div></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container-fluid">
+		<p>
+			<a th:href="@{/stbHome}" class="movePage backPage">&lt;</a>
+		</p>
+		<footer th:replace="~{parts/common :: page_footer}"> </footer>
+	</div>
+
+</body>
+</html>

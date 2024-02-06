@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.mapper.PaymentMapper">
+
+	<!-- テーブルに入っている呼び出し時時点でのデータ全て -->
+	<select id="selectAll"
+		resultType="com.example.app.domain.Payment">
+		SELECT
+		member.id, member.name,
+		payments.payment,
+		payments.memo
+		FROM
+		payments
+		JOIN
+		member 
+		ON
+		member.id = payments.name_id
+		ORDER BY member.id ASC;
+		<!-- ORDER BY member.id ASC, payments.id ASC; -->
+
+	</select>
+
+	<!-- 立替した人のそれぞれの立て替え額合計額を算出 -->
+	<select id="paymentSum"
+		resultType="com.example.app.domain.Payment">
+		SELECT payments.name_id, member.name,
+		SUM(payments.payment)
+		as paymentSum
+		FROM payments
+		LEFT JOIN member ON
+		payments.name_id =
+		member.id
+		GROUP BY payments.name_id, member.name;
+	</select>
+
+	<!-- データ挿入 -->
+	<insert id="insert"
+		parameterType="com.example.app.domain.Payment">
+		INSERT INTO payments (name_id, payment, memo)
+		VALUES
+		(#{nameId},#{payment},#{memo})
+	</insert>
+
+	<!-- 人数を算出 -->
+	<select id="countAll" resultType="Integer"
+		parameterType="com.example.app.domain.Payment">
+		SELECT COUNT(*) as_row_count FROM member
+	</select>
+
+	<!-- 全員の支出額合計を算出 -->
+	<select id="totalPayment" resultType="Integer"
+		parameterType="com.example.app.domain.Payment">
+		SELECT SUM(payment) FROM payments
+	</select>
+
+	<!-- 立替した人のそれぞれの立て替え額合計額を算出 <select id="addCulEach" resultType="int" parameterType="com.example.app.domain.Payment"> 
+		SELECT payments.name_id, member.name, SUM(payments.payment) as paymentSum 
+		FROM payments LEFT JOIN member ON payments.name_id = member.id GROUP BY payments.name_id, 
+		member.name; </select> -->
+</mapper>

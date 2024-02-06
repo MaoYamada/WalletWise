@@ -1,0 +1,321 @@
+@charset "UTF-8";
+
+/* error setting */
+.error {
+	color: #f00;
+}
+
+/* body styling */
+.container-fluid h1 {
+	color: white;
+	font-family: 'Gill Sans', sans-serif;
+	font-size: 52px;
+	padding: 20px;
+}
+
+h2 {
+	font: 30px;
+	font-weight: bold;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.homeLink {
+	float: right;
+}
+
+.explain {
+	font: 14px;
+	margin: 5px;
+}
+
+.explainText {
+	margin: 4px 6px;
+}
+
+.form-group {
+	margin: 0;
+}
+
+.form-group label {
+	padding: 2px;
+	margin: 0;
+}
+
+.name-select {
+	padding: 0;
+	margin: 0;
+}
+
+.form-control {
+	margin: 0;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.resultText {
+	text-align: center;
+}
+
+li {
+	font: 15px;
+	padding: 5px;
+}
+
+.actionList li {
+	margin: 35px 0;
+}
+
+.resultText ul {
+	display: inline-block;
+	text-align: left;
+}
+
+.resultTextEach span {
+	font-size: 20px;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f8f9fa;
+}
+
+.container-fluid {
+	background-color: #f1ce63;
+	color: #ffffff;
+	text-align: center;
+}
+
+.container {
+	background-color: #ffffff;
+	color: black;
+	padding: 24px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin: 24px auto;
+	max-width: 600px;
+}
+
+.addMembers h2 {
+	color: black;
+	pading: 0;
+	margin-bottom: 20px;
+}
+
+.addMembers p {
+	float: center;
+	text-align: cente;
+}
+
+.new-name {
+	font-weight: bold;
+	font-size: 30px;
+	padding-left: 40px;
+}
+
+.home {
+	height: 235px;
+}
+
+.member-table {
+	margin: auto;
+}
+
+.operation {
+	width: 400px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Style for form elements */
+.wide-select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+}
+
+.error {
+	color: #dc3545; /* Red color for error messages */
+	margin-bottom: 10px;
+}
+
+#payment, #memo {
+	margin-bottom: 15px;
+}
+
+input[type="text"], input[type="submit"] {
+	padding: 10px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+}
+
+input[type="submit"] {
+	background-color: #007bff; /* Blue color for submit button */
+	color: #ffffff;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #0056b3; /* Darker blue color on hover */
+}
+
+.explainText {
+	float: right;
+	padding: 6px;
+}
+
+.container-fluid p {
+	margin-bottom: 10px;
+}
+
+/* Footer styling */
+footer {
+	color: #ffffff;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Hyperlink styling */
+a {
+	color: #007bff;
+	text-decoration: none;
+	width: auto;
+}
+
+a:hover {
+	color: #0056b3;
+}
+
+/* Btn styling */
+.btn {
+	text-align: center;
+	border-radius: 5px;
+	background-color: #7ec9d1;
+	padding: 10px 80px;
+	text-decoration: none;
+	color: white;
+	text-decoration: none
+}
+
+.actionList .btn {
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: #acd2fd;
+	padding: 10px 60px;
+	border-radius: 5px;
+}
+
+.actionList .btn:hover {
+	color: #fff;
+	background-color: #0162ba;
+}
+
+.name {
+	font-size: 24px;
+	padding: 10px 150px 10px 25px;
+}
+
+.operation {
+	margin-right: 70px;
+}
+
+td .btn {
+	margin: 0;
+}
+
+.btn-edit {
+	background-color: #4887e6;
+	margin-right: 0;
+	float: center;
+	padding: 10px 32px;
+}
+
+.btn-danger {
+	padding: 10px 26px;
+	margin-right: 0;
+	background-color: #ea7042;
+	float: center;
+}
+
+.submit {
+	padding: 5px 40px;
+}
+
+.backPage {
+	float: left;
+	margin: 6px 0;
+}
+
+.name-select {
+	padding: 10px;
+	margin: 6px;
+}
+/* ここから下がstartボタンのCSS　*/
+.btn-start {
+	display: inline-block;
+	width: 200px;
+	text-align: center;
+	border: 2px solid #fff;
+	font-size: 19px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 8px 20px;
+	border-radius: 5px;
+	position: relative;
+	margin: 0 175px;
+	background-color: #0182f5;
+}
+
+.btn-start span {
+	position: relative;
+	z-index: 1;
+}
+
+.btn-start::before, .btn-start::after {
+	content: "";
+	display: block;
+	background-color: #acd2fd;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: .2s;
+}
+
+.btn-start::before {
+	left: 0;
+}
+
+.btn-start::after {
+	right: 0;
+}
+
+.btn-start:hover:before, .btn-start:hover:after {
+	width: 0;
+	background-color: #acd2fd;
+}
+
+.btn-start:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-submit {
+	margin: 10px 190px;
+	border: 2px solid #fff;
+	border-radiuse: 6px;
+}

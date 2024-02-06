@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common :: html_head}">
+</head>
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"></header>
+	</div>
+
+	<div class="container">
+		<form action="/member/add" method="post" th:object="${member}">
+			<span th:errors="*{name}" class="error"></span>
+			<p>
+				<input type="text" th:field="*{name}">
+			</p>
+			<input class="btn btn-submit" type="submit" value="add">
+		</form>
+		<p class=changePage>
+			<a th:href="@{/member/members}">Check registered member</a>
+		</p>
+	</div>
+
+	<div class="container-fluid">
+		<p>
+			<a th:href="@{/payment/main}" class="movePage backPage">&lt;</a>
+		</p>
+		<p>
+			<a th:href="@{/member/members}" class="movePage goPage">&gt;</a>
+		</p>
+		<footer th:replace="~{parts/common :: page_footer}"></footer>
+	</div>
+
+</body>
+</html>

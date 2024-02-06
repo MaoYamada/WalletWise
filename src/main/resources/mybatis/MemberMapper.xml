@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.app.mapper.MemberMapper">
+
+	<select id="selectAll"
+		resultType="com.example.app.domain.Member">
+		SELECT
+		member.id, member.name FROM member
+	</select>
+
+	<insert id="insert"
+		parameterType="com.example.app.domain.Member">
+		INSERT INTO member (name)
+		VALUES (#{name})
+	</insert>
+
+	<delete id="delete">
+		DELETE FROM stb_db.member
+		WHERE id = #{id}
+	</delete>
+
+	<select id="selectById"
+		resultType="com.example.app.domain.Member">
+		SELECT name from member WHERE id= #{id}
+	</select>
+</mapper>

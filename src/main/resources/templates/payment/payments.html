@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common :: html_head}"></head>
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"></header>
+	</div>
+
+	<div class="container">
+		<table border="1" cellpadding="12" cellspacing="5">
+			<tr class="thema">
+				<th>Payer(Name)</th>
+				<th>Price(￥)</th>
+				<th>Memo(Purpose)</th>
+				<th>Remove</th>
+			</tr>
+			<tr th:each="payment : ${payments}">
+				<td th:text="${payment.name}"></td>
+				<td th:text="${payment.payment}"></td>
+				<td th:text="${payment.memo}"></td>
+				<td><a class="button" href="#" role="button"> <span>remove</span>
+						<div class="icon">
+							<i class="fa fa-remove"></i> <i class="fa fa-check"></i>
+						</div>
+				</a></td>
+			</tr>
+		</table>
+		<p>
+			<a class="changePage" th:href="@{/payment/add}">add new history</a>
+		</p>
+	</div>
+
+	<div class="container-fluid">
+		<p>
+			<a class="movePage backPage" href="/payment/add">&lt;</a>
+		</p>
+		<footer th:replace="~{parts/common :: page_footer}"> </footer>
+	</div>
+
+</body>
+</html>

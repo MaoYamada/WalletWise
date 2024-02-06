@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{parts/common :: html_head}"></head>
+<body>
+
+	<div class="container-fluid">
+		<header th:replace="~{parts/common :: page_header}"></header>
+
+	</div>
+
+	<div class="container">
+		<h3>Add Completed</h3>
+		<p>New Information Added Below</p>
+
+		<table border="1" cellpadding="12" cellspacing="5">
+			<tr>
+				<th>Person name</th>
+				<td th:text="${NameId}"></td>
+			</tr>
+			<tr>
+				<th>Amount paid</th>
+				<td th:text="'￥'+${Payment}"></td>
+			</tr>
+			<tr>
+				<th>Memo</th>
+				<td th:text="${Memo}"></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="container-fluid">
+		<p class=changePage>
+			<a href="/payment/main" class="movePage backPage">&lt;</a>
+		</p>
+		<p class=changePage>
+			<a href="/payment/add">Add More</a>
+		</p>
+		<footer th:replace="~{parts/common :: page_footer}"></footer>
+	</div>
+
+</body>
+</html>
